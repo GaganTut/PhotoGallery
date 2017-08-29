@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
      this.PhotoService.loadPhotos().subscribe(photos => {
-       this.photos = photos;
+       this.photos = photos.splice(0, 20);
      })
   }
 

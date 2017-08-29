@@ -1,7 +1,9 @@
 <div>
   <h2>All Photos</h2>
-  <div *ngFor="let photo of photos">
-    <h4>Photo Id: {{photo.id}} Title: {{photo.title}}</h4>
-    <img src="{{photo.thumbnailUrl}}">
-  </div>
+  <md-grid-list cols="4" rowHeight="2:1" gutterSize="5px">
+    <md-grid-tile *ngFor="let photo of photos" (click)="openPhoto()">
+      <h3>{{photo.title}}</h3>
+      <img src="{{photo.thumbnailUrl}}">
+    </md-grid-tile>
+  </md-grid-list>
 </div>
