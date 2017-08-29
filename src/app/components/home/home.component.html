@@ -1,6 +1,7 @@
 <div>
   <h2>All Photos</h2>
-  <div>
-
+  <div *ngFor="let photo of photos">
+    <h4>Photo Id: {{photo.id}} Title: {{photo.title}}</h4>
+    <img src="{{photo.thumbnailUrl}}">
   </div>
 </div>

@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+
+import { PhotoService } from './services/photo.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,10 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [PhotoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
