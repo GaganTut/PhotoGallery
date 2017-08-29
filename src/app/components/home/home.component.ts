@@ -8,14 +8,26 @@ import {PhotoService} from '../../services/photo.service';
 })
 export class HomeComponent implements OnInit {
 
-  photos: Photo[]
+  photos: Photo[];
+  togglePhotoView: boolean = false;
+  photoBeingToggled: object = null;
 
   constructor(private PhotoService: PhotoService) { }
 
   ngOnInit() {
      this.PhotoService.loadPhotos().subscribe(photos => {
-       this.photos = photos.splice(0, 20);
+       this.photos = photos.splice(0, 21);
      })
+  }
+
+  openPhoto(photoId: number): void {
+    this.togglePhotoView = true;
+    this.photoBeingToggled = this.photos.filter(photo => photo.id === photoId)[0];
+  }
+
+  closePhoto() {
+    this.togglePhotoView = false;
+    this.photoBeingToggled = null;
   }
 
 }

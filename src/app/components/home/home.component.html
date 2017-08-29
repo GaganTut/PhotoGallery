@@ -1,9 +1,15 @@
 <div>
   <h2>All Photos</h2>
-  <md-grid-list cols="4" rowHeight="2:1" gutterSize="5px">
-    <md-grid-tile *ngFor="let photo of photos" (click)="openPhoto()">
+  <md-grid-list cols="3" rowHeight="2:1" gutterSize="10px">
+    <md-grid-tile *ngFor="let photo of photos" (click)="openPhoto(photo.id)" class="each-photo-thumbnail">
       <h3>{{photo.title}}</h3>
       <img src="{{photo.thumbnailUrl}}">
     </md-grid-tile>
   </md-grid-list>
+</div>
+
+<div *ngIf="togglePhotoView" class="toggled-photo">
+  <h3>{{photoBeingToggled.title}}</h3>
+  <img src="{{photoBeingToggled.url}}">
+  <button (click)="closePhoto()">X</button>
 </div>
