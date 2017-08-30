@@ -14,15 +14,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { PhotoService } from './services/photo.service';
-import { SinglePhotoComponent } from './components/single-photo/single-photo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent,
-    SinglePhotoComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
